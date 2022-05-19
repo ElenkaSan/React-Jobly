@@ -22,25 +22,25 @@ function CompanyList() {
   if (!companies) return <LoadingSpinner />;
 
   return (
-      <div className="CompanyList col-md-8 offset-md-2">
-        <SearchForm searchFor={search} />
-        {companies.length
-            ? (
-                <div className="CompanyList-list">
-                  {companies.map(c => (
-                      <CompanyCard
-                          key={c.handle}
-                          handle={c.handle}
-                          name={c.name}
-                          description={c.description}
-                          logoUrl={c.logoUrl}
-                      />
-                  ))}
-                </div>
-            ) : (
-                <p className="lead">Sorry, no results were found!</p>
-            )}
-      </div>
+    <div className="CompanyList col-md-8 offset-md-2">
+      <SearchForm searchFor={search} />
+      {companies.length ? (
+        <div className="CompanyList-list">
+          {console.log(companies)}
+          {companies.map((c) => (
+            <CompanyCard
+              key={c.handle}
+              handle={c.handle}
+              name={c.name}
+              description={c.description}
+              logoUrl={c.logoUrl}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className="lead">Sorry, no results were found!</p>
+      )}
+    </div>
   );
 }
 

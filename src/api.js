@@ -19,9 +19,7 @@ class JoblyApi {
 
     const url = `${BASE_URL}/${endpoint}`;
     const headers = { Authorization: `Bearer ${JoblyApi.token}` };
-    const params = (method === "get")
-        ? data
-        : {};
+    const params = method === "get" ? data : {};
 
     try {
       return (await axios({ url, method, data, params, headers })).data;
@@ -39,13 +37,14 @@ class JoblyApi {
     return res.token;
   }
 
-   static async login(data) { 
+  static async login(data) {
     let res = await this.request(`auth/token`, data, "post");
     return res.token;
   }
-  
+
   static async getUserProfile(username) {
     let res = await this.request(`users/${username}`);
+    console.log(res);
     return res.user;
   }
 
@@ -55,12 +54,12 @@ class JoblyApi {
   }
 
   static async updateUserProfile(formData, username) {
-    let res = await this.request(`users/${username}`, formData, 'patch');
+    let res = await this.request(`users/${username}`, formData, "patch");
     return res;
   }
 
   //  wanna deleteUser, wasn't do yet
-  static async deleteUser(username){
+  static async deleteUser(username) {
     try {
       let res = await this.request(`users/${username}`, {}, "delete");
       return res.data;
@@ -87,21 +86,28 @@ class JoblyApi {
     return res.jobs;
   }
 
-    // /** Get details on a job with given ID */
-    // static async getJob(id){
-    //   try {
-    //     let res = await this.request(`jobs/${id}`);
-    //     return res.data.job;
-    //   } catch (err) {
-    //     console.error(err.message);
-    //   }
-    // }
+  /** Get list of jobs (filtered by title if not undefined) */
+  static async getJobsByIds(ids) {
+    const requests = ids.map((id) => {
+      return this.request(`jobs/${id}`);
+    });
+
+    return await Promise.all(requests);
+  }
+
+  // /** Get details on a job with given ID */
+  // static async getJob(id){
+  //   try {
+  //     let res = await this.request(`jobs/${id}`);
+  //     return res.data.job;
+  //   } catch (err) {
+  //     console.error(err.message);
+  //   }
+  // }
 
   static async applyToJob(username, id) {
     await this.request(`users/${username}/jobs/${id}`, {}, "post");
   }
-
 }
-
 
 export default JoblyApi;
