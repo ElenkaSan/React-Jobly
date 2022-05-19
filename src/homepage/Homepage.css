@@ -1,0 +1,22 @@
+/* .Homepage { */
+  /* put around the vertical center of page */
+  /* height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+} */
+
+.Home {
+  color: #8fb325;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all .5s ease-in-out;
+  /* text-align: center; */
+  /* margin: 25px;
+  padding: 25px; */
+}
+
+.Home:hover {
+  text-decoration: none;
+  color: #3caa9b;
+  border-bottom: 2px solid #367f9e;
+}
