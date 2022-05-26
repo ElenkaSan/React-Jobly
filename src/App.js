@@ -12,45 +12,51 @@ import jwt from "jsonwebtoken";
 export const TOKEN_STORAGE_ID = "jobly-token";
 
 // function App({updateUser}) {
-  function App() {
-
+function App() {
   const [infoLoaded, setInfoLoaded] = useState(false);
   const [applicationIds, setApplicationIds] = useState(new Set([]));
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
 
   console.debug(
-      "App",
-      "infoLoaded=", infoLoaded,
-      "isLoggedIn=", isLoggedIn,
-      "token=", token,
+    "App",
+    "infoLoaded=",
+    infoLoaded,
+    "isLoggedIn=",
+    isLoggedIn,
+    "token=",
+    token
   );
 
   // Load user info from API. Until a user is logged in and they have a token,
   // this should not run. It only needs to re-run when a user logs out, so
   // the value of the token is a dependency for this effect.
 
-  useEffect(function loadUserInfo() {
-    console.debug("App useEffect loadUserInfo", "token=", token);
+  useEffect(
+    function loadUserInfo() {
+      console.debug("App useEffect loadUserInfo", "token=", token);
 
-    async function getUserProfile() {
-      if (token) {
-        try {
-          let { username } = jwt.decode(token);
-          JoblyApi.token = token;
-          let isLoggedIn = await JoblyApi.getUserProfile(username);
-          setIsLoggedIn(isLoggedIn);
-          setApplicationIds(new Set(isLoggedIn.applications));
-        } catch (err) {
-          console.error(err);
-          setIsLoggedIn(null);
+      async function getUserProfile() {
+        if (token) {
+          try {
+            let { username } = jwt.decode(token);
+            JoblyApi.token = token;
+            let isLoggedIn = await JoblyApi.getUserProfile(username);
+            const { applications, ...user } = isLoggedIn;
+            setIsLoggedIn(user);
+            setApplicationIds(new Set(applications));
+          } catch (err) {
+            console.error(err);
+            setIsLoggedIn(null);
+          }
         }
+        setInfoLoaded(true);
       }
-      setInfoLoaded(true);
-    }
-    setInfoLoaded(false);
-    getUserProfile();
-  }, [token]);
+      setInfoLoaded(false);
+      getUserProfile();
+    },
+    [token]
+  );
 
   const signup = async (signupData) => {
     try {
@@ -59,9 +65,9 @@ export const TOKEN_STORAGE_ID = "jobly-token";
       return { success: true };
     } catch (err) {
       console.error(err);
-      return [false, err.message];
+      return { success: false, error: err };
     }
-  }
+  };
 
   const login = async (loginData) => {
     try {
@@ -70,31 +76,31 @@ export const TOKEN_STORAGE_ID = "jobly-token";
       return { success: true };
     } catch (err) {
       console.error(err);
-      return [false, err.message];
+      return { success: false, error: err };
     }
-  }
+  };
 
   const logout = () => {
-      setIsLoggedIn(null);
-      setToken(null);
-    }
+    setIsLoggedIn(null);
+    setToken(null);
+  };
 
   const hasAppliedToJob = (id) => {
     return applicationIds.has(id);
-  }
+  };
 
   const applyToJob = async (id) => {
     if (hasAppliedToJob(id)) return;
-    try{
+    try {
       JoblyApi.applyToJob(isLoggedIn.username, id);
       setApplicationIds(new Set([...applicationIds, id]));
     } catch (err) {
       console.error(err.message);
     }
-  }
+  };
 
   // const removeApplied = (evt) => {
-  //   const id = evt.target; 
+  //   const id = evt.target;
   //   try{
   //     if (hasAppliedToJob(id)) {
   //          const arr = applicationIds.filter((j) => j.id !== id);
@@ -106,30 +112,36 @@ export const TOKEN_STORAGE_ID = "jobly-token";
   // }
 
   const removeApplied = (id) => {
-    try{
-      const removeIt = applicationIds.filter((j) => {
-        return j.id !== id
-      });
-      setApplicationIds(removeIt)
-      
+    try {
+      const removeIt = new Set(applicationIds);
+      removeIt.delete(id);
+      setApplicationIds(removeIt);
     } catch (err) {
       console.error(err.message);
     }
-  }
+  };
 
   if (!infoLoaded) return <LoadingSpinner />;
 
   return (
-      <BrowserRouter>
-        <UserContext.Provider
-            value={{ isLoggedIn, setIsLoggedIn, hasAppliedToJob, applyToJob, removeApplied }}>
-          <div className="App">
-            <Navigation logout={logout} />
-            <Routes login={login} signup={signup} />
-            {/* <Routes login={login} signup={signup} updateUser={updateUser}/> */}
-          </div>
-        </UserContext.Provider>
-      </BrowserRouter>
+    <BrowserRouter>
+      <UserContext.Provider
+        value={{
+          isLoggedIn,
+          setIsLoggedIn,
+          hasAppliedToJob,
+          applyToJob,
+          removeApplied,
+          applicationIds,
+        }}
+      >
+        <div className="App">
+          <Navigation logout={logout} />
+          <Routes login={login} signup={signup} />
+          {/* <Routes login={login} signup={signup} updateUser={updateUser}/> */}
+        </div>
+      </UserContext.Provider>
+    </BrowserRouter>
   );
 }
 
