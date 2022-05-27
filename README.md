@@ -20,9 +20,9 @@ Tech used: Components, Props, Custom Hooks, React Hooks (useContext, useState, u
   
 3. cd into the "frontend" directory, install required packages, then start the app 
 
-  `cd frontend  
-  npm install  
-  npm start`  
+  `cd frontend`    
+  `npm install`    
+  `npm start`  
   
   This will run your app on http://localhost:3000
 
