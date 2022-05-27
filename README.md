@@ -27,7 +27,7 @@ Tech used: Components, Props, Custom Hooks, React Hooks (useContext, useState, u
   ```
   This will run your app on http://localhost:3000
   
- ## App Information
+## App Information
 ### Routes
 |Path               | Component     |  
 |-------------------|---------------|
@@ -39,7 +39,36 @@ Tech used: Components, Props, Custom Hooks, React Hooks (useContext, useState, u
 | /jobs	            | JobCardList   |
 | /profile          | ProfileForm   |
 
-
+## Component Architecture
+```sh
+App
+api
+├── Routes-nav
+|   ├── Navigation
+|   └── Routes
+├── Companies
+│   ├── CompanyCard
+|   |__ CompanyList ── Search
+|   ├── CompanyDetail ── JobCard
+│   └── CompanyHeader 
+├── Jobs
+|   ├── JobCard
+│   └── JobCardList ── Search
+├── Homepage ── NoLoggedIn
+├─┬ Auth
+│ │ ├── LoginForm
+| | ├── SignupForm
+| | └── ProfileForm
+│ └── UserContext
+├── Common
+|   ├── LoadingSpinner 
+|   ├── SearchForm
+│   └── Alert
+└── Hooks
+    ├── useLocalStorage
+    ├── useTimedMessage
+    └── useToggle
+```
 ## Available Scripts
 
 In the project directory, you can run:
