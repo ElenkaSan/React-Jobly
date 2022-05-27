@@ -38,7 +38,7 @@ Tech used: Components, Props, Custom Hooks, React Hooks (useContext, useState, u
 | /companies/:handle| CompanyDetail |
 | /jobs	            | JobCardList   |
 | /profile          | ProfileForm   |
-|-----------------------------------|
+
 
 ## Available Scripts
 
