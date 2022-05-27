@@ -83,10 +83,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Jobly Further Study
 ### Nav Links
   If you haven’t already done so, make it so that the links in the navigation bar appear differently when you’re already on that page.
-### Pagination
+### Pagination / Companies list and Job list
   Since there are so many companies and jobs, it’s unwieldy to see them all listed. Add “batched pagination”, so that users see 20 at a time, and can move among those batches (and make sure it works with the search!)
-### Un-Apply to Jobs
+### Un-Apply to Jobs / Homepage and Job list
   Add a feature where, when you click on the “already applied” button for a job, you can unapply. This may require you to add an endpoint to your backend server — a nice chance to reacquaint yourself with Express!
-### Show A List of Companies Applied To
+### Show A List of Companies Applied To // On the Homepage you can see applied jobs list when login / signup
   It would be nice to see the companies a user has applied to, add a component and route to display this information.
 
