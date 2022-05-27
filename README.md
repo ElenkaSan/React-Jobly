@@ -48,7 +48,7 @@ api
 |   └── Routes
 ├── Companies
 │   ├── CompanyCard
-|   |__ CompanyList ── Search
+|   ├── CompanyList ── Search
 |   ├── CompanyDetail ── JobCard
 │   └── CompanyHeader 
 ├── Jobs
