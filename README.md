@@ -13,17 +13,15 @@ Tech used: Components, Props, Custom Hooks, React Hooks (useContext, useState, u
   `cd backend`  
   `npm install`  
   `createdb jobly`  
-  `psql jobly < data.sql` 
+  `psql jobly < data.sql`  
   `nodemon server.js`  
   
   This will start the server on port 3001
   
 3. cd into the "frontend" directory, install required packages, then start the app 
 
-  `cd frontend
-  
-  npm install
-  
+  `cd frontend  
+  npm install  
   npm start`  
   
   This will run your app on http://localhost:3000
