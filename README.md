@@ -148,7 +148,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
   It would be nice to see the companies a user has applied to, add a component and route to display this information.
 
 ## Phone 
-<img width="958" alt="Screen Shot 2022-06-04 at 12 30 18 AM" src="https://user-images.githubusercontent.com/75818489/171983451-c9fd0055-e85b-45f0-9697-4f4350d3ecd4.png" width="600px" height="500px">
-<img width="958" alt="Screen Shot 2022-06-04 at 12 30 18 AM 2" src="https://user-images.githubusercontent.com/75818489/171983453-5ca9d973-a1fa-44a0-ac37-adc87c7969b8.png" width="700px" height="500px">
+<img width="958" alt="Screen Shot 2022-06-04 at 12 30 18 AM" src="https://user-images.githubusercontent.com/75818489/171983451-c9fd0055-e85b-45f0-9697-4f4350d3ecd4.png" width="500px" height="700px">
+<img width="958" alt="Screen Shot 2022-06-04 at 12 30 18 AM 2" src="https://user-images.githubusercontent.com/75818489/171983453-5ca9d973-a1fa-44a0-ac37-adc87c7969b8.png" width="500px" height="700px">
 
 ## Web
+<img width="1425" alt="Screen Shot 2022-06-04 at 12 45 45 AM" src="https://user-images.githubusercontent.com/75818489/171983646-662b0908-4f1c-4d26-bf27-c8c90e6db6c9.png" width="300px" height="100px">
+<img width="1425" alt="Screen Shot 2022-06-04 at 12 45 15 AM" src="https://user-images.githubusercontent.com/75818489/171983651-591831cc-5009-4b2d-9299-15d10408c8ac.png" width="300px" height="100px">
+<img width="1425" alt="Screen Shot 2022-06-04 at 12 44 52 AM" src="https://user-images.githubusercontent.com/75818489/171983672-8dcfde0c-a913-4b3e-8463-5dcdb8b4053c.png" width="300px" height="100px">
+
