@@ -152,7 +152,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 <img width="958" alt="Screen Shot 2022-06-04 at 12 30 18 AM 2" src="https://user-images.githubusercontent.com/75818489/171983453-5ca9d973-a1fa-44a0-ac37-adc87c7969b8.png">
 
 ## Web
-<img width="1425" alt="Screen Shot 2022-06-04 at 12 45 45 AM" src="https://user-images.githubusercontent.com/75818489/171983646-662b0908-4f1c-4d26-bf27-c8c90e6db6c9.png">
-<img width="1425" alt="Screen Shot 2022-06-04 at 12 45 15 AM" src="https://user-images.githubusercontent.com/75818489/171983651-591831cc-5009-4b2d-9299-15d10408c8ac.png">
-<img width="1425" alt="Screen Shot 2022-06-04 at 12 44 52 AM" src="https://user-images.githubusercontent.com/75818489/171983672-8dcfde0c-a913-4b3e-8463-5dcdb8b4053c.png">
+<img width="1425" alt="Screen Shot 2022-06-04 at 12 45 15 AM" src="https://user-images.githubusercontent.com/75818489/171984626-18f886df-766c-4d9a-b21e-580da94edc8d.png">
+
 
