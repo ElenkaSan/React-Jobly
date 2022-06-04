@@ -6,7 +6,7 @@ Tech used: Components, Props, Custom Hooks, React Hooks (useContext, useState, u
 
 1. Clone this repo 
   ```sh
-  git clone https://github.com/ElenkaSan/unit43-React-Jobly.git
+  git clone [here](https://github.com/ElenkaSan/React-Jobly.git)
   ```
   
 2. cd into the "backend" directory, install required packages, create and seed database, and start the server. (Make sure that you have postgreSQL installed)
