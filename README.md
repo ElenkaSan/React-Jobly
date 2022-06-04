@@ -27,6 +27,8 @@ Tech used: Components, Props, Custom Hooks, React Hooks (useContext, useState, u
   ```
   This will run your app on http://localhost:3000
   
+  - For login can use "testuser" / "password" 
+  
 ## App Information
 ### Routes
 |Path               | Component     |  
