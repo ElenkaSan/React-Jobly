@@ -51,7 +51,7 @@ function SignupForm({ signup }) {
   
   
   return (
-    <section className="d-flex justify-content-center" style={{ margin: '50px'}}>
+    <section className="col-md-6 col-lg-4 offset-md-3 offset-lg-4">
     <Card >
       <CardBody>
         <CardTitle className="font-weight-bold text-center text-info">
