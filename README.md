@@ -15,7 +15,7 @@ Tech used: Components, Props, Custom Hooks, React Hooks (useContext, useState, u
   cd backend  
   npm install  
   createdb jobly 
-  psql jobly < data.sql  
+  psql < jobly.sql  
   nodemon server.js
   ```  
   This will start the server on port 3001
