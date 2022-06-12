@@ -1,6 +1,5 @@
 # React Front End to Jobly BackEnd
-### *Try the app [Jobly](https://tearful-cactus.surge.sh/)* 
-`Login: test / Password: password`.  
+### *Try the app [Jobly](https://tearful-cactus.surge.sh/)*  
   
 This project tied in the back end API to build out a job board site with mock data.
 It utilizes authentication to the backend, showing companies and their jobs, and allowing the user to apply to these jobs.
