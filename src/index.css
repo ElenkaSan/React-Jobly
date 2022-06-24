@@ -37,11 +37,15 @@ body {
   padding: 0;
   height: 100vh;
   overflow: scroll;
-  /* background: url(https://www.insperity.com/wp-content/uploads/Remote_work_1200x630.png); */
-  background: url(https://miro.medium.com/max/1000/0*B1tkXn6u83kBSJ36.jpg);
-  /* background: url(https://matchr.com/wp-content/uploads/2021/06/hr-software-scaled.jpeg) no-repeat; */
-  background-size: flex;
-  /* background-repeat: cover; */
+/*   background: url(https://miro.medium.com/max/1000/0*B1tkXn6u83kBSJ36.jpg);
+  background-size: flex; */
+  background: url(https://miro.medium.com/max/1000/0*B1tkXn6u83kBSJ36.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-clip: border-box;
+  height: 100%;
 }
 
 code {
